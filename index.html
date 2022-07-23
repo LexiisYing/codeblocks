@@ -1,0 +1,26 @@
+<html>
+<ul id="list">
+</ul>   
+
+<script>
+var links;
+
+
+links = ['CYF', 'https://codeyourfuture.io/', 'Google', 'https://www.google.co.uk/', 'Youtube', 'https://www.youtube.com/'];
+while (!!links.length) {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_list = document.getElementById('list');
+  let new_li = document.createElement('li');
+  let new_a = document.createElement('a');
+  new_a.innerText = links.shift();
+  new_a.setAttribute("href", links.shift());
+
+  new_li.appendChild(new_a);
+
+  element_list.appendChild(new_li);
+}
+
+
+</script>
+
+</html>
